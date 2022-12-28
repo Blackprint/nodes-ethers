@@ -21,6 +21,7 @@ class MyTemplate extends Blackprint.Node {
 
 	constructor(instance){
 		super(instance);
+		// this.partialUpdate = true;
 
 		// Interface path
 		// Let it empty if you want to use default built-in interface
@@ -37,6 +38,7 @@ class MyTemplate extends Blackprint.Node {
 	}
 
 	// This is more recomended than using event listener "port.value" or "value"
+	// cable will always `undefined` except you put `this.partialUpdate = true` in node contructor
 	update(cable){
 		// Triggered when any output value from other node are updated
 		// And this node's input connected to that output
